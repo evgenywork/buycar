@@ -1,0 +1,91 @@
+{
+  "list": [
+    {
+      "absentee": true,
+      "alias": "bmw",
+      "country": {
+        "code": "DE",
+        "id": 2,
+        "title": "Германия"
+      },
+      "currentCarCount": 37,
+      "currentModelsTotal": 13,
+      "generations": [],
+      "id": 4,
+      "isOutbound": false,
+      "logo": "http://tradeins.space/uploads/brand/4/35dad01f02c529a28f45cb8d47d089fa1e911639.png",
+      "models": [
+        {
+          "absentee": false,
+          "alias": "2_series",
+          "bodies": [
+            {
+              "alias": "coupe",
+              "doors": 2,
+              "photo": "https://tradeins.space/uploads/photo/7035393/3e801bb45f50f466b91ae07c3bda86f55a561735.jpeg",
+              "title": "Купе",
+              "type": "coupe",
+              "typeTitle": "Купе"
+            }
+          ],
+          "brand": {
+            "absentee": true,
+            "alias": "bmw",
+            "country": {
+              "code": "DE",
+              "id": 2,
+              "title": "Германия"
+            },
+            "id": 4,
+            "isOutbound": false,
+            "logo": "http://tradeins.space/uploads/brand/4/35dad01f02c529a28f45cb8d47d089fa1e911639.png",
+            "title": "BMW",
+            "titleRus": "БМВ"
+          },
+          "carId": "n1648837",
+          "colorsCount": 3,
+          "count": 1,
+          "hasSpecialPrice": false,
+          "id": 9752,
+          "metallicPay": 0,
+          "minprice": 2733100,
+          "model": {
+            "absentee": false,
+            "alias": "2_series",
+            "id": 2362,
+            "prefix": "",
+            "title": "2 серии",
+            "titleRus": "2 серии"
+          },
+          "ownTitle": "F44",
+          "pearlPay": 0,
+          "photo": "https://207231.selcdn.ru/locator-media/models_desktop_q90/tradeins.space-uploads-photo-7035393-3e801bb45f50f466b91ae07c3bda86f55a561735.jpeg",
+          "prefix": "",
+          "premiumPriceSpecials": [],
+          "renderPhotos": {
+            "side": {
+              "coupe": {
+                "height": 459,
+                "path": "https://tradeins.space/uploads/photo/3266975/33_0003_Слой 5.jpg",
+                "width": 942
+              }
+            }
+          },
+          "sizesPhotos": {
+            "width250": "https://207231.selcdn.ru/locator-media/models_desktop_250_q90/tradeins.space-uploads-photo-107107-larg_1.png"
+          },
+          "specmetallicPay": 0,
+          "title": "2 серии",
+          "titleRus": "2 серии",
+          "transportType": {
+            "alias": "cars",
+            "id": 1,
+            "title": "Легковые"
+          }
+        }
+      ],
+      "title": "BMW",
+      "titleRus": "БМВ"
+    }
+  ]
+}

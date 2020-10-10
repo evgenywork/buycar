@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <!--Image View-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_image_24"
+        android:layout_width="400dp"
+        android:layout_height="400dp" />
+
+
+    <!--Button to capture image-->
+    <Button
+        android:id="@+id/captureImageButton"
+        android:text="@string/capture_image"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"/>
+
+
+      <Button
+        android:id="@+id/carListButton"
+        android:text="@string/car_list"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:onClick="onClickToCarListActivity"/>
+
+    <!--CarCalculator-->
+    <Button
+        android:id="@+id/carCalculatorButton"
+        android:text="@string/car_calculator"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:onClick="onClickToCarCalculatorActivity"/>
+
+</LinearLayout>

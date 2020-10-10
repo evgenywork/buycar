@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Buy car</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="car_list">Car List</string>
+    <string name="title_activity_car_list">Car List Activity</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="api_button">Api button</string>
+    <string name="car_calculator">Car calculator</string>
+</resources>
