@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="@string/percents"
-            android:visibility="gone" />
+            android:visibility="invisible" />
 
         <EditText
             android:id="@+id/editInitialPrice"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="@string/initial_price"
-            android:visibility="gone" />
+            android:visibility="invisible" />
 
         <EditText
             android:id="@+id/editTerm"
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="@string/year"
-            android:visibility="gone" />
+            android:visibility="invisible" />
 
 
         <Button
@@ -82,9 +82,9 @@
             android:text="@string/ask_credit"
             android:textColor="@color/colorWhite"
             android:textSize="12sp"
-            android:visibility="gone" />
+            android:visibility="invisible" />
 
-        <!--
+
         <Button
             android:id="@+id/buttonPayments"
             android:layout_width="match_parent"
@@ -95,8 +95,8 @@
             android:textColor="@color/colorWhite"
             android:onClick="onClickGetPayments"
             android:textSize="12sp"
-            android:visibility="gone" />
--->
+            android:visibility="invisible" />
+
         <EditText
             android:id="@+id/editTextLastPayment"
             android:layout_width="match_parent"

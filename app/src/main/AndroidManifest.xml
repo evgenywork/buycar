@@ -33,6 +33,8 @@
         <activity
             android:name=".CarListActivity"
             android:label="@string/title_activity_car_list" />
+        <activity android:name=".AvitoActivity"
+            android:label="@string/title_activity_avito_car_list"/>
     </application>
 
 </manifest>

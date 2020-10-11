@@ -46,10 +46,11 @@
                 android:textColor="?android:attr/textColorSecondary" />
 
             <TextView
+                android:id="@+id/descriptionTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Any text"
+                android:text=""
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
 

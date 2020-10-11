@@ -6,24 +6,21 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:fillViewport="false"
-    tools:context=".CarListActivity">
+    tools:context=".AvitoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:id="@+id/activity_car_list_layout"
-        android:background="@android:color/holo_purple">
+        android:id="@+id/activity_avito_car_list_layout">
 
 
-        <Button
-            android:id="@+id/avitoButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:text="Avito Car"
-            android:onClick="onClickToAvitoCarActivity"/>
+<!--        <Button-->
+<!--            android:id="@+id/NewButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="New Auto"-->
+<!--            android:onClick="onClickToCarListActivity"/>-->
     </LinearLayout>
 
 

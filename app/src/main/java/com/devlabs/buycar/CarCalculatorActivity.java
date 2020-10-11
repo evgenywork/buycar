@@ -121,7 +121,7 @@ public class CarCalculatorActivity extends AppCompatActivity {
         editTextLastPayment = findViewById(R.id.editTextLastPayment);
         editTextLoanAmount = findViewById(R.id.editTextLoanAmount);
         editTextPayment = findViewById(R.id.editTextPayment);
-        //buttonPayments = findViewById(R.id.buttonPayments);
+        buttonPayments = findViewById(R.id.buttonPayments);
         editTextContractRate = findViewById(R.id.editTextContractRate);
 
         date_time = dateTime.format(formatter);
@@ -161,12 +161,13 @@ public class CarCalculatorActivity extends AppCompatActivity {
          email = sharedPreferences.getString(KEY_EMAIL, null);
 
         //Clear shared pref
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.clear();
+//        editor.commit();
 
 
-//        car_minprice = 850000;
-//        car_alias = "Haval";
+        car_minprice = 2733100;
+        car_alias = "Cadillac";
         //get initial val
         initialPrice = (int) (car_minprice * 0.2);
 
@@ -187,7 +188,7 @@ public class CarCalculatorActivity extends AppCompatActivity {
             editTerm.setVisibility(View.VISIBLE);
             textViewContractRate.setVisibility(View.VISIBLE);
             buttonPayments.setVisibility(View.VISIBLE);
-            buttonRegisterUser.setVisibility(View.GONE);
+            buttonRegisterUser.setVisibility(View.INVISIBLE);
 
         }
 
@@ -325,7 +326,7 @@ public class CarCalculatorActivity extends AppCompatActivity {
         public void onResponse(Call<CalculateResponse> call, Response<CalculateResponse> response) {
             CalculateResponse resp = response.body(); // тут твой класс
             System.out.println("RESPONSE");
-            System.out.println(resp.getResult());
+//            System.out.println(resp.getResult());
             System.out.println(resp.getResult().getContractRate());
             double contractRate = resp.getResult().getContractRate();
             double kaskoCost = resp.getResult().getKaskoCost();
@@ -357,7 +358,7 @@ public class CarCalculatorActivity extends AppCompatActivity {
 
     public void onClickGetPayments(View view) {
         /*{"contractRate":10.1,"lastPayment":41.3378801,"loanAmount":1000000,"payment":50000,"term":5}*/
-
+        System.out.println(editTextContractRate.getText());
         double ctRate = Double.parseDouble(editTextContractRate.getText().toString());
         double ctLP = Double.parseDouble(editTextLastPayment.getText().toString());
         double ctLA = Double.parseDouble(editTextLoanAmount.getText().toString());
