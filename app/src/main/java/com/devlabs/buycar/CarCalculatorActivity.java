@@ -121,7 +121,7 @@ public class CarCalculatorActivity extends AppCompatActivity {
         editTextLastPayment = findViewById(R.id.editTextLastPayment);
         editTextLoanAmount = findViewById(R.id.editTextLoanAmount);
         editTextPayment = findViewById(R.id.editTextPayment);
-        buttonPayments = findViewById(R.id.buttonPayments);
+        //buttonPayments = findViewById(R.id.buttonPayments);
         editTextContractRate = findViewById(R.id.editTextContractRate);
 
         date_time = dateTime.format(formatter);
