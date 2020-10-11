@@ -52,6 +52,7 @@ public class CarCalculatorActivity extends AppCompatActivity {
     SeekBar seekBarCredit;
 
     ImageView imageView;
+    String answer =null;
 
     SharedPreferences sharedPreferences;
 
@@ -160,12 +161,12 @@ public class CarCalculatorActivity extends AppCompatActivity {
          email = sharedPreferences.getString(KEY_EMAIL, null);
 
         //Clear shared pref
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
-//        editor.clear();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
 
 
-        car_minprice = 850000;
-        car_alias = "Haval";
+//        car_minprice = 850000;
+//        car_alias = "Haval";
         //get initial val
         initialPrice = (int) (car_minprice * 0.2);
 
@@ -227,7 +228,7 @@ public class CarCalculatorActivity extends AppCompatActivity {
 
             MediaType mediaType = MediaType.parse("application/json");
 //            RequestBody body = RequestBody.create(mediaType, "{\"comment\":\"Получение наличных\",\"customer_party\":{\"email\":\"" + email + "\",\"income_amount\": "+ salary +",\"person\":{\"birth_date_time\":\""+ birthday +"\",\"birth_place\":\""+ city +"\",\"family_name\":\""+ sername +"\",\"first_name\":\""+ first_name +"\",\"gender\":\"male\",\"middle_name\":\""+ second_name +"\",\"nationality_country_code\":\"RU\"},\"phone\":\""+ phone +"\"},\"datetime\":\"2020-10-11T10:30:47Z\",\"interest_rate\":15.7,\"requested_amount\": "+ loan_price +",\"requested_term\": "+ termMonths +",\"trade_mark\":\""+ car_alias +"\",\"vehicle_cost\": "+ car_minprice+"}");
-            RequestBody body = RequestBody.create(mediaType, "{\"comment\":\"Комментарий\",\"customer_party\":{\"email\":\""+ email +"\",\"income_amount\":"+ salary +",\"person\":{\"birth_date_time\":\"1981-11-01\",\"birth_place\":\"г. Воронеж\",\"family_name\":\"Иванов\",\"first_name\":\"Иван\",\"gender\":\"male\",\"middle_name\":\"Иванович\",\"nationality_country_code\":\"RU\"},\"phone\":\"+99999999999\"},\"datetime\":\"2020-10-10T08:15:47Z\",\"interest_rate\":15.7,\"requested_amount\":300000,\"requested_term\":36,\"trade_mark\":\"Nissan\",\"vehicle_cost\":600000}");
+            RequestBody body = RequestBody.create(mediaType, "{\"comment\":\"Комментарий\",\"customer_party\":{\"email\":\""+ email +"\",\"income_amount\":"+ salary +",\"person\":{\"birth_date_time\":\"1987-11-16\",\"birth_place\":\""+city+"\",\"family_name\":\"Иванов\",\"first_name\":\"Иван\",\"gender\":\"male\",\"middle_name\":\"Иванович\",\"nationality_country_code\":\"RU\"},\"phone\":\"+99999999999\"},\"datetime\":\"2020-10-10T08:15:47Z\",\"interest_rate\":15.7,\"requested_amount\":300000,\"requested_term\":36,\"trade_mark\":\"Nissan\",\"vehicle_cost\":600000}");
             Request request = new Request.Builder()
                     .url("https://gw.hackathon.vtb.ru/vtb/hackathon/carloan")
                     .post(body)
@@ -259,20 +260,41 @@ public class CarCalculatorActivity extends AppCompatActivity {
 
                             JSONObject carsObject2 = new JSONObject(decision_report);
 
-                            String application_status = carsObject2.getString("application_status");
-                            System.out.println(application_status);
+                            String application_status = carsObject2.getString("application_status").toString();
+                            String decision_end_date = carsObject2.getString("decision_end_date").toString();
+                            String decision_date = carsObject2.getString("decision_date").toString();
+                            double monthly_payment = Double.parseDouble(carsObject2.getString("monthly_payment"));
+                            System.out.println("APPLICATION STATUS : " + application_status);
 
-                            String answer =null;
+                            Intent intent = new Intent(CarCalculatorActivity.this, CreditAnswerActivity.class);
+                            //alias - mazda
+                            //model-alias - model
+                            intent.putExtra("application_status", application_status);
+                            intent.putExtra("monthly_payment", monthly_payment);
+                            intent.putExtra("decision_end_date", decision_end_date);
+                            intent.putExtra("decision_date", decision_date);
+                            startActivity(intent);
 
-                            if (application_status == "prescore_approved") {
-                                answer = "Your credit was aproved!";
-                            } else  if (application_status == "prescore_denied") {
-                                answer = "Your credit was denied!";
-                            } else {
-                                answer = "Processing";
-                            }
 
-                            Toast.makeText(CarCalculatorActivity.this, answer, Toast.LENGTH_LONG).show();
+//                            CarCalculatorActivity.this.runOnUiThread(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    if (application_status == "prescore_approved") {
+//                                        answer = "Your credit was prescore aproved!";
+//                                    } else  if (application_status == "prescore_denied") {
+//                                        answer = "Your credit was denied!";
+//                                    } else if (application_status == "processing"){
+//                                        answer = "Processing";
+//                                    }
+//
+//                                    System.out.println(application_status);
+//                                    System.out.println(answer);
+//
+//                                    Toast.makeText(CarCalculatorActivity.this, answer, Toast.LENGTH_LONG).show();
+//                                }
+//                            });
+
+
 
                             Map<String, String> result = new ObjectMapper().readValue(decision_report, HashMap.class);
 
