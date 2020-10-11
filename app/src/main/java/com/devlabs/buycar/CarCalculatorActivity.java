@@ -166,8 +166,8 @@ public class CarCalculatorActivity extends AppCompatActivity {
 //        editor.commit();
 
 
-        car_minprice = 2733100;
-        car_alias = "Cadillac";
+	//car_minprice = 2733100;
+        //car_alias = "Cadillac";
         //get initial val
         initialPrice = (int) (car_minprice * 0.2);
 
