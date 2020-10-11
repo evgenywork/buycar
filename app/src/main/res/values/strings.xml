@@ -6,4 +6,20 @@
     <string name="permission_denied">Permission denied</string>
     <string name="api_button">Api button</string>
     <string name="car_calculator">Car calculator</string>
+    <string name="registration">Registration</string>
+    <string name="enter_first_name">Enter first name</string>
+    <string name="enter_sername">Enter sername</string>
+    <string name="enter_second_name">Enter second name</string>
+    <string name="enter_birthday">Enter birthday YYYY-MM-DD</string>
+    <string name="enter_salary">Enter salary</string>
+    <string name="enter_city">Enter city</string>
+    <string name="enter_phone">Enter phone</string>
+    <string name="enter_email">Enter email</string>
+    <string name="save">Save</string>
+    <string name="calculate_auto_credit">Fill the user date to calculate auto credit</string>
+    <string name="calculate_payment_graphs">Calculate payment graphs</string>
+    <string name="initial_price">Initial Price</string>
+    <string name="percents">Percents</string>
+    <string name="year">Year</string>
+    <string name="ask_credit">Ask credit</string>
 </resources>

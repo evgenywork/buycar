@@ -1,0 +1,173 @@
+{
+  "specmetallicPay": 0,
+  "prefix": "",
+  "bodies": [
+    {
+      "doors": 5,
+      "alias": "liftbek",
+      "photo": "https://tradeins.space/uploads/photo/83651/novaya-octavia_1.png",
+      "typeTitle": "Лифтбэк",
+      "type": "liftback",
+      "title": "Лифтбэк"
+    },
+    {
+      "doors": 5,
+      "alias": "wagon",
+      "photo": "https://tradeins.space/uploads/photo/90371/novaya-octavia-combi_2.png",
+      "typeTitle": "Универсал",
+      "type": "wagon",
+      "title": "Универсал"
+    }
+  ],
+  "photo": "https://207231.selcdn.ru/locator-media/models_desktop_q90/tradeins.space-uploads-photo-83651-novaya-octavia_1.png",
+  "title": "OCTAVIA",
+  "absentee": false,
+  "titleRus": "Октавия",
+  "pearlPay": 0,
+  "alias": "octavia",
+  "renderPhotos": {
+    "render_widget_left": {
+      "wagon": {
+        "path": "https://tradeins.space/uploads/photo/83049/novaya-oktavia-universal.png",
+        "width": 640,
+        "height": 360
+      },
+      "liftbek": {
+        "path": "https://tradeins.space/uploads/photo/83048/novaya-oktavia.png",
+        "width": 640,
+        "height": 360
+      }
+    },
+    "side": {
+      "wagon": {
+        "path": "https://tradeins.space/uploads/photo/267455/0e1634cd25b3e1d9e93a1d9f5d1025cd.png",
+        "width": 720,
+        "height": 360
+      },
+      "liftbek": {
+        "path": "https://tradeins.space/uploads/photo/266943/36e873ee082085018182a443fecc8f01.png",
+        "width": 720,
+        "height": 360
+      }
+    },
+    "render_main": {
+      "liftbek": {
+        "path": "https://tradeins.space/uploads/photo/142311/oktavia.png",
+        "width": 720,
+        "height": 360
+      }
+    },
+    "main_left": {
+      "wagon": {
+        "path": "https://tradeins.space/uploads/photo/2543995/38a992367acc7581ec8eaee46e4f3ef3.png",
+        "width": 720,
+        "height": 360
+      },
+      "liftbek": {
+        "path": "https://tradeins.space/uploads/photo/2538921/1d29d575cee8a8aa75148bb7af4d1ec3.png",
+        "width": 720,
+        "height": 360
+      }
+    },
+    "back": {
+      "wagon": {
+        "path": "https://tradeins.space/uploads/photo/267873/c03257c1f1f1a4db07d55bb397b2c840.png",
+        "width": 720,
+        "height": 360
+      },
+      "liftbek": {
+        "path": "https://tradeins.space/uploads/photo/267417/2216eb5f0c538088e6880ef7e7b86031.png",
+        "width": 720,
+        "height": 360
+      }
+    },
+    "main": {
+      "wagon": {
+        "path": "https://tradeins.space/uploads/photo/141167/oktavia-kombi.png",
+        "width": 720,
+        "height": 360
+      },
+      "liftbek": {
+        "path": "https://tradeins.space/uploads/photo/267259/607612225041e5cd61483d4bed2685a2.png",
+        "width": 720,
+        "height": 360
+      }
+    },
+    "render_widget_right": {
+      "wagon": {
+        "path": "https://tradeins.space/uploads/photo/90371/novaya-octavia-combi_2.png",
+        "width": 450,
+        "height": 300
+      },
+      "liftbek": {
+        "path": "https://tradeins.space/uploads/photo/83651/novaya-octavia_1.png",
+        "width": 450,
+        "height": 300
+      }
+    },
+    "front": {
+      "wagon": {
+        "path": "https://tradeins.space/uploads/photo/267605/94ccb457fcdcbc684f749ead30fd95f8.png",
+        "width": 720,
+        "height": 360
+      },
+      "liftbek": {
+        "path": "https://tradeins.space/uploads/photo/267109/0ab99b76643bbeac03282e393252f2fb.png",
+        "width": 720,
+        "height": 360
+      }
+    },
+    "render_side": {
+      "wagon": {
+        "path": "https://tradeins.space/uploads/photo/927/oktavia-combi.png",
+        "width": 498,
+        "height": 249
+      },
+      "liftbek": {
+        "path": "https://tradeins.space/uploads/photo/655/oktavia.png",
+        "width": 664,
+        "height": 332
+      }
+    }
+  },
+  "metallicPay": 0,
+  "model": {
+    "titleRus": "Октавия",
+    "prefix": "",
+    "alias": "octavia",
+    "id": 2962,
+    "title": "OCTAVIA",
+    "absentee": false
+  },
+  "transportType": {
+    "alias": "cars",
+    "id": 1,
+    "title": "Легковые"
+  },
+  "id": 9558,
+  "ownTitle": "III Рестайлинг",
+  "brand": {
+    "titleRus": "Шкода",
+    "country": {
+      "code": "CZ",
+      "id": 13,
+      "title": "Чехия"
+    },
+    "isOutbound": false,
+    "alias": "skoda",
+    "logo": "http://tradeins.space/uploads/brand/45/af0202a3ed691b5f3df71f57f2384624e61de06c.png",
+    "id": 45,
+    "title": "ŠKODA",
+    "absentee": false
+  },
+  "minPrice": 1093900,
+  "hasSpecialPrice": false,
+  "premiumPriceSpecials": [],
+  "count": 42,
+  "colorsCount": 2,
+  "carId": "n1648837",
+  "sizesPhotos": {
+    "width250": "https://207231.selcdn.ru/locator-media/models_desktop_250_q90/tradeins.space-uploads-photo-83651-novaya-octavia_1.png",
+    "width220": "https://207231.selcdn.ru/locator-media/models_desktop_220_q90/tradeins.space-uploads-photo-83651-novaya-octavia_1.png"
+  }
+}
