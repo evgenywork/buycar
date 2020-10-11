@@ -52,7 +52,7 @@ public class CarCalculatorActivity extends AppCompatActivity {
     SeekBar seekBarCredit;
 
     ImageView imageView;
-    String answer =null;
+    String answer = null;
 
     SharedPreferences sharedPreferences;
 
@@ -70,6 +70,9 @@ public class CarCalculatorActivity extends AppCompatActivity {
     private static final String KEY_SALARY = "salary";
     private static final String KEY_PHONE = "phone";
     private static final String KEY_EMAIL = "email";
+    private static final String KEY_LINK = "link";
+    private static final String KEY_PRICE = "price";
+    private static final String KEY_CAR = "car";
 
     Intent intent;
     int car_id;
@@ -98,6 +101,9 @@ public class CarCalculatorActivity extends AppCompatActivity {
     String birthday;
     String phone;
     String email;
+    String memory_link;
+    int memory_price;
+    String memory_car;
 
     String date_time;
 
@@ -148,26 +154,46 @@ public class CarCalculatorActivity extends AppCompatActivity {
         editInitialPrice = findViewById(R.id.editInitialPrice);
         editTerm = findViewById(R.id.editTerm);
 
-        Picasso.with(CarCalculatorActivity.this).load(intent.getStringExtra("car_photo_url")).into(imageView);
+
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
-         first_name = sharedPreferences.getString(KEY_FIRST_NAME, null);
-         sername = sharedPreferences.getString(KEY_SERNAME, null);
-         second_name = sharedPreferences.getString(KEY_SECOND_NAME, null);
-         salary = sharedPreferences.getString(KEY_SALARY, null);
-         city = sharedPreferences.getString(KEY_CITY, null);
-         birthday = sharedPreferences.getString(KEY_FIRST_NAME, null);
-         phone = sharedPreferences.getString(KEY_PHONE, null);
-         email = sharedPreferences.getString(KEY_EMAIL, null);
+        first_name = sharedPreferences.getString(KEY_FIRST_NAME, null);
+        sername = sharedPreferences.getString(KEY_SERNAME, null);
+        second_name = sharedPreferences.getString(KEY_SECOND_NAME, null);
+        salary = sharedPreferences.getString(KEY_SALARY, null);
+        city = sharedPreferences.getString(KEY_CITY, null);
+        birthday = sharedPreferences.getString(KEY_FIRST_NAME, null);
+        phone = sharedPreferences.getString(KEY_PHONE, null);
+        email = sharedPreferences.getString(KEY_EMAIL, null);
+        memory_link = sharedPreferences.getString(KEY_LINK, null);
+        memory_price = sharedPreferences.getInt(KEY_PRICE, 0);
+        memory_car = sharedPreferences.getString(KEY_CAR, null);
 
         //Clear shared pref
 //        SharedPreferences.Editor editor = sharedPreferences.edit();
 //        editor.clear();
 //        editor.commit();
 
+        if (!car_photo_url.isEmpty()) {
 
-	//car_minprice = 2733100;
-        //car_alias = "Cadillac";
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(KEY_LINK, car_photo_url);
+            editor.putInt(KEY_PRICE, car_minprice);
+            editor.putString(KEY_CAR, car_alias);
+            editor.apply();
+
+        } else {
+            car_minprice = memory_price;
+            car_photo_url = memory_link;
+            car_alias = memory_car;
+        }
+
+
+        Picasso.with(CarCalculatorActivity.this).load(car_photo_url).into(imageView);
+
+
+//        car_minprice = 2733100;
+//        car_alias = "Cadillac";
         //get initial val
         initialPrice = (int) (car_minprice * 0.2);
 
@@ -229,7 +255,7 @@ public class CarCalculatorActivity extends AppCompatActivity {
 
             MediaType mediaType = MediaType.parse("application/json");
 //            RequestBody body = RequestBody.create(mediaType, "{\"comment\":\"Получение наличных\",\"customer_party\":{\"email\":\"" + email + "\",\"income_amount\": "+ salary +",\"person\":{\"birth_date_time\":\""+ birthday +"\",\"birth_place\":\""+ city +"\",\"family_name\":\""+ sername +"\",\"first_name\":\""+ first_name +"\",\"gender\":\"male\",\"middle_name\":\""+ second_name +"\",\"nationality_country_code\":\"RU\"},\"phone\":\""+ phone +"\"},\"datetime\":\"2020-10-11T10:30:47Z\",\"interest_rate\":15.7,\"requested_amount\": "+ loan_price +",\"requested_term\": "+ termMonths +",\"trade_mark\":\""+ car_alias +"\",\"vehicle_cost\": "+ car_minprice+"}");
-            RequestBody body = RequestBody.create(mediaType, "{\"comment\":\"Комментарий\",\"customer_party\":{\"email\":\""+ email +"\",\"income_amount\":"+ salary +",\"person\":{\"birth_date_time\":\"1987-11-16\",\"birth_place\":\""+city+"\",\"family_name\":\"Иванов\",\"first_name\":\"Иван\",\"gender\":\"male\",\"middle_name\":\"Иванович\",\"nationality_country_code\":\"RU\"},\"phone\":\"+99999999999\"},\"datetime\":\"2020-10-10T08:15:47Z\",\"interest_rate\":15.7,\"requested_amount\":300000,\"requested_term\":36,\"trade_mark\":\"Nissan\",\"vehicle_cost\":600000}");
+            RequestBody body = RequestBody.create(mediaType, "{\"comment\":\"Комментарий\",\"customer_party\":{\"email\":\"" + email + "\",\"income_amount\":" + salary + ",\"person\":{\"birth_date_time\":\"1987-11-16\",\"birth_place\":\"" + city + "\",\"family_name\":\"Иванов\",\"first_name\":\"Иван\",\"gender\":\"male\",\"middle_name\":\"Иванович\",\"nationality_country_code\":\"RU\"},\"phone\":\"+99999999999\"},\"datetime\":\"2020-10-10T08:15:47Z\",\"interest_rate\":15.7,\"requested_amount\":300000,\"requested_term\":36,\"trade_mark\":\"Nissan\",\"vehicle_cost\":600000}");
             Request request = new Request.Builder()
                     .url("https://gw.hackathon.vtb.ru/vtb/hackathon/carloan")
                     .post(body)
@@ -294,7 +320,6 @@ public class CarCalculatorActivity extends AppCompatActivity {
 //                                    Toast.makeText(CarCalculatorActivity.this, answer, Toast.LENGTH_LONG).show();
 //                                }
 //                            });
-
 
 
                             Map<String, String> result = new ObjectMapper().readValue(decision_report, HashMap.class);
@@ -370,7 +395,6 @@ public class CarCalculatorActivity extends AppCompatActivity {
 
         NetworkService.getInstance().getCalculatorApi().calculate(req).enqueue(paymentsCallback);
     }
-
 
 
     Callback<PaymentsGraphResponse> paymentsCallback = new Callback<PaymentsGraphResponse>() {
